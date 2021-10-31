@@ -1,0 +1,72 @@
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
+// mixins
+@mixin text {
+    color: $text-color;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: calc(25.6 / 16);
+    text-align: center;
+    margin-bottom: 18px;
+    font-family: $font;
+}
+@mixin heading($size) {
+    color: $heading-color;
+    font-family: $font-heading;
+    font-size: $size;
+    line-height: calc(60 / 48);
+    margin-bottom: 18px;
+}
+.heading {
+    @include heading(4.8rem);
+}
+.text {
+    @include text;
+}
+.heading-s {
+    color: $heading-color;
+    font-family: $font-heading;
+    font-size: 2.4rem;
+    line-height: calc(33.19 / 18);
+
+    display:-webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.text-s {
+    font-family: $font;
+    font-size: 1.4rem;
+    line-height: calc(22.4 / 14);
+    
+    display:-webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.bold-medium {
+    font-weight: 500;
+}
+.text-left {
+    text-align: left !important;
+}
+.white-color {
+    color: #fff !important;
+}
+
+@media screen and (max-width: 1023px) {
+}
+
+
+@media screen and (max-width: 767px) {
+    .heading {
+        @include heading(3.6rem);
+    }
+}
+
+

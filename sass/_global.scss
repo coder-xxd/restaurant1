@@ -1,0 +1,151 @@
+@import "typography";
+
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: $font;
+    font-weight: 400;
+    color: $text-color;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+input {
+    width: 100%;
+    line-height: normal;
+    border: none;
+    outline: none;
+}
+textarea {
+    border: none;
+    outline: none;
+    font-family: $font;
+}
+section[id] {
+    scroll-margin-top: 93px;
+}
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+// Button CSS
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 28px;
+
+    font-family: $font;
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: calc( 21 / 14);
+    color: #fff;
+    background-color: $primary-color;
+
+    border-radius: 100rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &--small {
+        padding: 4px 10px;
+        background: rgba(232, 107, 38, 0.08);
+        border-radius: 25px;
+        color: $primary-color;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: calc( 19.2 / 12);
+    }
+    &--square {
+        padding: 9px 140px;
+        border-radius: unset;
+    }
+}
+
+// Underline text
+@mixin underline($bottom, $left, $translate) {
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: $primary-color;
+
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+    transform: $translate;
+}
+.underline-text {
+    position: relative;
+    &:after {
+        @include underline(-30%, 0, unset)
+    }
+}
+// Container Box
+.section-box {
+    padding: 120px 0;
+    margin: 0 auto;
+    &--center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.heading-box {
+    @include heading(4.8rem);
+    @include text;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+    margin-bottom: 70px;
+    &:after {
+        @include underline(0, 50%, translateX(-50%))
+    }
+    .text {
+        width: 527px;
+    }
+}
+
+// Responsive
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 50px;
+    }
+    .section-box {
+        padding: 60px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+    .section-box {
+        padding: 25px 0;
+    }
+    .heading-box .text {
+        width: 300px;
+    }
+}
+
+
+
+
+

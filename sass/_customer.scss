@@ -1,0 +1,77 @@
+.customer {
+    background: url('/images/customer-bg.png') no-repeat center center / cover ;
+    &-list {
+        display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0 30px;
+        position: relative;
+    }
+    &-item {
+        padding: 60px 30px;
+        background-color: #fff;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        height: auto;
+    }
+
+    .customer-item {
+        &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__image {
+            object-fit: cover;
+            // width: 100%;
+            margin: 0 auto 28px;
+        }
+        &__rating {
+            display: flex;
+            align-items: center;
+            gap: 0 4px;
+            margin-bottom: 16px;
+        }
+        .text-s {
+            text-align: center;
+            margin-bottom: 16px;
+            width: 320px;
+        }
+        &.slick-current.slick-active {
+            border-color: $primary-color;
+        }
+    }
+    // Slick slider
+    .slick-track {
+        display: flex;
+        gap: 0 30px;
+        padding-bottom: 60px;
+
+    }
+    .slick-slide {
+        // hard-code
+        width: 380px ;
+    }
+    .slick-dots {
+        list-style-type: none;
+        display: flex !important;
+        align-items: center;
+        gap: 0 15px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        button {
+            font-size: 0;
+            background-color: $gray-color;
+            width: 15px;
+            height: 15px;
+            border-radius: 100rem;
+            transition: all 0.2s linear;
+        }
+        .slick-active button {
+            width: 45px;
+            background-color: $primary-color;
+        }
+    }
+}
